@@ -1,0 +1,80 @@
+//分区（开头8字节-》分区类型  9-16-》分区大小）
+文件头：Size:0x40 00 03F
+head Size:0x24 040 073
+*Image Size:0x663738 074 6637bb
+classinf Size:0x0a0aba 6637bc 704285
+Function Size:0x130 704286 7043c5
+initnfnc Size:0x8 7043c6 7043dd
+Funcinfo Size:0x81c8 7043de 70c5b5
+symblinf Size:0x4 70c5b6 70c5c9
+*global Size:0x54 70c5ca 70c620d
+*data Size: 0x39d0 70c62e 71000d
+*conststr Size:0x2a3516 71000e(71001e) 9b35303(第一句话出现在9ac6a0+2/+E)
+//首个可识别文字：007D0DB0
+//选项区不在文本范围内
+
+*linkinf Size:0x10
+linkex64 Size:0x1c
+reffunc Size:0x04
+refcode Size:0x04
+refclass Size:0x04
+impnativ Size:0x016a
+//文本标志
+MAX 009B3730
+04 00 00 00(Start?)
+80(?)
+
+02 00 00 01(?)
+00 00 00(?)
+
+00结尾！！
+
+007D0DC0
+
+
+//控制符
+01 00 00 00
+\h;（选项高）
+\s;（选项宽）
+
+
+{0c 30/0d 30}之间是文本
+
+
+
+0100000063F3370036000000用途未知 63F3370036
+\n:（30 5C 00 6E 00 3A）
+
+
+010000003D7B03001A000000
+037b3d
+059f7d
+068c45
+07a345
+0a8815
+
+498941
+
+39df29
+
+final 63a3fd
+
+SCENE  7300630065006E006500
+
+TXT数据
+Start.txt->美穂乃おまけ.txt
+
+@Initialize text\共通01.txt
+01000000 1d393c00 19000000
+
+Start.TXT
+01000000 3d7b0300 1a000000
+
+Initialize text\ねここep.txt
+01000000 15c21500 1b000000<-疑似路线标识
+
+@Initialize text\マップ移動美穂乃1.txt
+01000000 25c06500 1e000000
+
+0064845d
+73de20
