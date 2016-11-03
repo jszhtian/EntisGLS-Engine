@@ -1,4 +1,3 @@
-
 # EntisGLS-Engine
 
 NOA32 extract (Finish!)
@@ -13,6 +12,6 @@ No Talk/Mess func in New CSX script!
 
 ConstStr index find!
 
-can not find relation between index to offset!
+can not find relation between index and offset!
 
 Project pause!
