@@ -17,7 +17,7 @@ bool Class_CsxImage::DumpStringInOrderToFile(string sFileName, int StartIndex)
 	fTmpHandle.write(UTF16LEBOM, 2);
 	auto pImageDataPtr = Class_CsxSector::GetSectorData().get();
 	unsigned char find_bytes[] = { 0x02,0x00,0x06,0x00,0x00,0x00,0x80 };
-	for (uint32_t i = 0; this->sHeader.SectorSize - sizeof(find_bytes); i++)
+	for (uint32_t i = 0; i<this->sHeader.SectorSize - sizeof(find_bytes); i++)
 	{
 		auto cTmpPtr = &pImageDataPtr[i];
 		if (memcmp(cTmpPtr, find_bytes, sizeof(find_bytes))==0)
