@@ -1,0 +1,27 @@
+WriteConstantString
+->DWORD	dwLength = 0x80000000 ;
+->DWORD	dwDummy = nIndex ;
+-->Read ConstantString by index!
+
+
+InstructionCode	|csicLoad->0x2
+ObjectMode	|csomImmediate->0x0
+VariableTypeCode	|csvtString->0x6
+ConstStrIdx->{
+	int32 StrSize=0x80000000;
+	int32 nIndex;
+}
+
+ConstStr
+->dwCount
+for(int i=0;i<dwCount;i++)
+{
+	ReadWideString();
+	ReadDwordArray();
+}
+ReadWideString
+->StrLen
+->Wchar_t
+DwordArray
+->ArrayCount
+->DWord[ArrayCount]
