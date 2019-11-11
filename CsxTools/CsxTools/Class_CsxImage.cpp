@@ -1,12 +1,16 @@
 #include "Class_CsxImage.h"
 
+Class_CsxImage::~Class_CsxImage()
+{
+}
+
 bool Class_CsxImage::setConstStrSector(shared_ptr<Class_CsxConstStr> Sector)
 {
 	this->pSector=Sector;
 	return true;
 }
 
-bool Class_CsxImage::DumpStringInOrderToFile(string sFileName, int StartIndex)
+bool Class_CsxImage::DumpStringInOrderToFile(string sFileName, unsigned int StartIndex)
 {
 	fstream fTmpHandle;
 	fTmpHandle.open(sFileName, fstream::binary | fstream::out);

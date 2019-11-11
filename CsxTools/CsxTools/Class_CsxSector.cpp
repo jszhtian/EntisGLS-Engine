@@ -1,6 +1,11 @@
 #include "Class_CsxSector.h"
 
 
+Class_CsxSector::~Class_CsxSector()
+{
+	this->CleanSectorData();
+}
+
 Class_CsxSector::Class_CsxSector(sCsxSectorHeader sHeader,shared_ptr<char[]> c_SectorData)
 {
 	memcpy(this->sHeader.Magic, sHeader.Magic, sizeof(sCsxSectorHeader));
@@ -27,5 +32,11 @@ bool Class_CsxSector::IsSectorMagicEqual(shared_ptr<Class_CsxSector> Sector)
 bool Class_CsxSector::IsSectorMagicEqual(const char* Magic)
 {
 	return (memcmp(this->sHeader.Magic, Magic, 8) == 0) ? true : false;
+}
+
+bool Class_CsxSector::CleanSectorData()
+{
+	this->c_SectorData.reset();
+	return true;
 }
 

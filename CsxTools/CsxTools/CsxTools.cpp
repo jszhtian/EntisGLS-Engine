@@ -1,5 +1,9 @@
 ﻿// CsxTools.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
 
 #include <iostream>
 #include <fstream>
@@ -10,14 +14,21 @@
 #include "Class_CsxFile.h"
 
 using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
-	Class_CsxFile cFile("script.csx");
+    std::cout << "Start!\n";
+	auto cFile=make_unique<Class_CsxFile>("script.csx");
 	//cFile.DumpSectorsToFile();
 	//cFile.RebuildCsxToFile("rebuild.csx");
 	//cFile.DumpConstStrToFile("dump.txt");
-	cFile.DumpStringInOrderToFile("dump.txt",0xBBF);
+	//cFile->DumpStringInOrderToFile("dump.txt",0xBBF);
+	cFile->DumpConstStrToFile("dump.txt");
+	cFile->dummyTest();
+	cFile->RebuildCsxToFile("rebuild.csx");
+	cFile.reset(nullptr);
+	std::cout << "End!\n";
+	_CrtDumpMemoryLeaks();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

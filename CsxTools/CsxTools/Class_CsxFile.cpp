@@ -1,10 +1,15 @@
 #include "Class_CsxFile.h"
+#include <iostream>
 
 
 
 Class_CsxFile::Class_CsxFile(string sFileName)
 {
 	LoadCsxFile(sFileName);
+}
+
+Class_CsxFile::~Class_CsxFile()
+{
 }
 
 bool Class_CsxFile::DumpSectorsToFile()
@@ -73,7 +78,7 @@ bool Class_CsxFile::ReplaceSector(shared_ptr<Class_CsxSector> cSector)
 	return true;
 }
 
-bool Class_CsxFile::DumpStringInOrderToFile(string sFileName, int StartIndex)
+bool Class_CsxFile::DumpStringInOrderToFile(string sFileName, unsigned int StartIndex)
 {
 	shared_ptr<Class_CsxConstStr> _ConstStr_sector;
 	shared_ptr<Class_CsxImage> _Image_sector;
@@ -131,4 +136,18 @@ void Class_CsxFile::LoadCsxFile(string sFileName)
 bool Class_CsxFile::IsFileOpened()
 {
 	return (this->fHandle) ? true:false;
+}
+
+bool Class_CsxFile::dummyTest()
+{
+	for (auto& Sector : this->vCsxSectors)
+	{
+		if (Sector->IsSectorMagicEqual(SectorConstStrMagic))
+		{
+			auto _sector = static_pointer_cast<Class_CsxConstStr>(Sector);
+			_sector->LoadConstStrFromFile(L"Rep.txt");
+			_sector->RebuildConstStrSector();
+		}
+	}
+	return true;
 }

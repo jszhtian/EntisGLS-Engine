@@ -22,13 +22,15 @@ public:
 	};
 #pragma pack()
 	Class_CsxFile(string sFileName);
+	~Class_CsxFile();
 	bool DumpSectorsToFile();
 	bool RebuildCsxToFile(string sFileName);
 	bool DumpConstStrToFile(string sFileName);
 	bool ReplaceSector(shared_ptr<Class_CsxSector> cSector);
-	bool DumpStringInOrderToFile(string sFileName,int StartIndex=0);
+	bool DumpStringInOrderToFile(string sFileName, unsigned int StartIndex=0);
 	void LoadCsxFile(string sFileName);
 	bool IsFileOpened();
+	bool dummyTest();
 private:
 	fstream fHandle;
 	sCsxHeader sHeader;
